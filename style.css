@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    display: flex;
+    height: 800px;
+    width: 800px;
+    border: 2px solid red;
+    flex-wrap: wrap;
+}
+
+.square {
+    height: 50px;
+    width: 50px;
+}
