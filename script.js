@@ -8,6 +8,12 @@
         const square = document.createElement("div");
         square.classList.add("square");
         container.appendChild(square);
+
+        square.addEventListener("mouseover", fillSquare);
+    }
+
+    function fillSquare (e) {
+        e.target.classList.add("filled");
     }
     
 
