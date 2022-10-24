@@ -4,8 +4,8 @@
 
     const container = document.querySelector("#container");
     const button = document.querySelector("button");
-    button.addEventListener("click", getSquareSize);
-
+    button.addEventListener("click", replaceSquares);
+    
     function createSquares (numSquares = 16) {
         for (let i = 0; i<numSquares*numSquares; i++) {
             const square = document.createElement("div");
@@ -18,17 +18,18 @@
         }
     }
 
-
     function fillSquare (e) {
         e.target.classList.add("filled");
     }
     
-    function getSquareSize () {
-        let numSquares = prompt("Please enter the number of squares per row (max 100)");
-        if (numSquares > 100) getSquareSize();
-        else return numSquares;
+    function replaceSquares() {
+        let userSize = prompt("How many squares would you like on each row (max 100)?")
+        if (userSize > 100) replaceSquares();
+        container.replaceChildren();
+        createSquares(userSize);
     }
 
-
+    createSquares();
+    
 
 })()
